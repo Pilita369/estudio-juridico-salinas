@@ -6,9 +6,7 @@ import "./index.css";
 
 /*
   Acá uso HashRouter para que GitHub Pages no rompa las rutas.
-  Ejemplo:
-  - /#/coworking funciona siempre
-  - refrescar no da 404
+  Si refresco la página, no me da 404.
 */
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
