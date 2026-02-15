@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 
 /*
-  ✅ Acá importo las páginas con ruta RELATIVA.
-  Esto evita el error de build cuando Vite no resuelve el alias "@/..."
+  ✅ Acá importo las páginas de forma relativa.
+  Yo hago esto para evitar problemas de build si el alias @ no está bien configurado.
 */
 import Index from "./pages/Index";
 import Coworking from "./pages/Coworking";
@@ -13,8 +13,11 @@ const App = () => {
   return (
     <>
       {/*
-        Acá defino las rutas.
-        Como en main.tsx estoy usando HashRouter, en GitHub Pages va a funcionar.
+        ✅ Acá defino mis rutas.
+        - Estoy usando HashRouter en main.tsx, entonces en GitHub Pages funciona perfecto.
+        - "/" es el home
+        - "/coworking" es la página de coworking
+        - "*" es cualquier cosa que no exista -> NotFound (404 interno de la app)
       */}
       <Routes>
         <Route path="/" element={<Index />} />
@@ -23,8 +26,8 @@ const App = () => {
       </Routes>
 
       {/*
-        Acá dejo el toaster global de Sonner.
-        Si no lo usás, lo podés borrar.
+        ✅ Acá dejo el toaster global de Sonner.
+        Yo lo puedo borrar si no lo uso.
       */}
       <Toaster richColors position="top-right" />
     </>
